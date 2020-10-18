@@ -132,18 +132,18 @@
 					<sonarQubeMinVersion>5.6</sonarQubeMinVersion> <!-- allow to depend on API 6.x but run on LTS -->
 				</configuration>
 			</plugin>
+
 			<plugin>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-surefire-plugin</artifactId>
-                                <version>2.19.1</version>
-                                <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
-				<plugin>
-                                             <groupId>org.apache.maven.plugins</groupId>
-                                              <artifactId>maven-surefire-plugin</artifactId>
-                                               <version>2.19.1</version>
-                                                  </plugin>
-						<!-- only required to run UT - these are UT dependencies -->
+
+			<!-- only required to run UT - these are UT dependencies -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
