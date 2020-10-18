@@ -1,0 +1,23 @@
+<p>PLM rule to avoid Variable declaration in Loop</p>
+<h2>Noncompliant Code for Variable Declaration in Loop Example</h2>
+<pre>
+
+for (int i =0;i<10;i++)
+{
+	int a = 0;
+	String b = "";
+}
+
+above Variable declarations cane be done outside of a loop as shown below.
+</pre>
+<h2>Compliant Solution for Variable Declaration in Loop</h2>
+<pre>
+Sample code snippet would look like this.
+int a;
+String b;
+for (int i =0;i<10;i++)
+{
+	a = 0;
+	b = "";
+}
+</pre>

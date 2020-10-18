@@ -1,0 +1,16 @@
+<p>PLM rule to avoid method multiple findObject</p>
+<h2>Non compliant Code for findObject Example</h2>
+<pre>
+
+MapList templateMapList = DomainObject.findObjects(context, "Route Template", sTemplateName, "*", "*", "*", "",false,objSelects);
+MapList simList = DomainObject.findObjects(context, "Simulation", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+above findObject can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for findObject</h2>
+<pre>
+Sample code snippet would look like this.
+MapList simList = DomainObject.findObjects(context, "Simulation,Route Template", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+ 
+</pre>

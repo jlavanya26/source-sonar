@@ -1,0 +1,19 @@
+<p>PLM rule to avoid using connect in a loop</p>
+<h2>Noncompliant Code for connect Example</h2>
+<pre>
+
+for(int i=0; i < personListsize; i++){
+	Map person = (Map)personList.get(i);
+	String relId = (String)person.get(DomainConstants.SELECT_RELATIONSHIP_ID);
+	DomainRelationship.connect(context, relId);
+}
+
+Above connect can be used outside loop as shown below.
+</pre>
+<h2>Compliant Solution for connect</h2>
+
+<pre>
+Sample code snippet would look like this.
+
+
+</pre>

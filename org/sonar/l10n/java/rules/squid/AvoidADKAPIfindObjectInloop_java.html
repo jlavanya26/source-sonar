@@ -1,0 +1,26 @@
+<p>PLM rule to avoid ADK method findObject in Loop</p>
+<h2>Noncompliant Code for findObject Example</h2>
+<pre>
+
+for (int j = 0; j < theSims.size(); j++) {
+	
+	Map theNextMap = (Map)theSims.get(j);
+	findObject();
+}
+above findObject can be placed outside the loop.
+
+</pre>
+<h2>Compliant Solution for findObject</h2>
+<pre>
+Sample code snippet would look like this.
+
+StringList theNextARAllocationTEIds ;
+ findObject();
+ 
+ for (int j = 0; j < theSims.size(); j++) {
+
+	Map theNextMap = (Map)theSims.get(j);
+	//Get the Allocations for the next Route
+}
+
+</pre>

@@ -1,0 +1,24 @@
+<p>@PLM rule : Avoid using * as argument in Selectable API Call</p>
+<h2>Non compliant Code for get info Example</h2>
+<pre>
+Avoid * as argument in Selectable APIs like getRelatedObjects/findObjects/getRelatedObject.
+
+Avoid passing * for Vault in findObjects as an argument.
+
+DomainObject dom = new DomainObject();
+dom.getRelatedObjects(context, "*", "*", "*", "*", boolean, boolean, Level, String, "*", 0); <!-- Complience Code -->
+dom.getRelatedObject(context,"*",boolean, "*","*");
+DomainObject.findObjects(context, "*","*", "*", String, "*", strWhereExp, boolen, boolean, Level); <!-- Complience Code -->
+
+</pre>
+<h2>Compliant Solution for Selectables</h2>
+<pre>
+Sample code snippet would look like this.
+<!-- Non Compliance code  -->
+
+Applicable to getRelatedObjects/getRelatedObject/ findObjects API.
+dom.getRelatedObjects(context, ANY_SPECIFIC_TYPE, ANY_SPECIFIC_RELATIONSHIP, ANY_SPECIFIC_TYPE_SELECTABLES, ANY_SPECIFIC_REL_SELECTABLES, boolean, boolean, Level, String, String, 0);
+dom.getRelatedObject(context,ANY_SPECIFIC_TYPE_SELECTABLES,boolean, ANY,ANY);
+DomainObject.findObjects(context, ANY_SPECIFIC_TYPE, String, String, String, strWhereExp, String, boolean, boolean, Level);
+
+</pre>

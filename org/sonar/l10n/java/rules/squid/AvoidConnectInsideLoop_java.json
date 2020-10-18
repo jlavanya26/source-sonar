@@ -1,0 +1,13 @@
+{
+  "title": "Enovia Rule: All the object connection must be done outside the loop by storing all the id's object in array.",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Minor"
+}

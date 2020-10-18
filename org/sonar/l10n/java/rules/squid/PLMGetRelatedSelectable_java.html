@@ -1,0 +1,21 @@
+<p>PLM rule to avoid “.value” notation as part of an attribute selection</p>
+<h2>Noncompliant Code for .value Example</h2>
+<pre>
+
+StringList selects = new StringList (3);
+selects.add(“attribute[“ + attr1 + “].value”);
+selects.add(“attribute[“ + attr2 + “].value”);
+selects.add(“attribute[“ + attr3 + “].value”); 
+
+above .value can be ignored.
+</pre>
+<h2>Compliant Solution for get info</h2>
+<pre>
+Sample code snippet would look like this.
+
+StringList selects = new StringList (3);
+selects.add(“attribute[“ + attr1 + “]”);
+selects.add(“attribute[“ + attr2 + “]”);
+selects.add(“attribute[“ + attr3 + “]”);
+ 
+</pre>

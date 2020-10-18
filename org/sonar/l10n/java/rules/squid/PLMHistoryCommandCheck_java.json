@@ -1,0 +1,13 @@
+{
+  "title": "Enovia Rule: Avoid history off unless mandatory and handle it with history on",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Minor"
+}

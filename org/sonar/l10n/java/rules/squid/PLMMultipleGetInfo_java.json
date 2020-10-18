@@ -1,0 +1,13 @@
+{
+  "title": "Enovia Rule: Avoid multiple get info in method declarations",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Minor"
+}

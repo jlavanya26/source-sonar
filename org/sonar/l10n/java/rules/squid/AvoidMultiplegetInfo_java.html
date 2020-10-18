@@ -1,0 +1,16 @@
+<p>PLM rule to avoid method multiple getInfo</p>
+<h2>Non compliant Code for getInfo Example</h2>
+<pre>
+
+MapList templateMapList = DomainObject.getInfo(context, "Route Template", sTemplateName, "*", "*", "*", "",false,objSelects);
+MapList simList = DomainObject.getInfo(context, "Simulation", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+above getInfo can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for getInfo</h2>
+<pre>
+Sample code snippet would look like this.
+MapList simList = DomainObject.getInfo(context, "Simulation,Route Template", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+ 
+</pre>

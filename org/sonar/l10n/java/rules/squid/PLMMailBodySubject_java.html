@@ -1,0 +1,23 @@
+<p>PLM rule to check Mql body, subject should not be hardcoded.</p>
+<h2>Noncompliant Code for get info Example</h2>
+<pre>
+
+DomainObject dObj = new DomainObject(objectId);
+String  sFirstName =(String)dObj.getInfo(context, SELECT_ATTRIBUTE_FIRSTNAME);
+String  sLastName =(String)dObj.getInfo(context, SELECT_ATTRIBUTE_LASTNAME); 
+
+above getInfo can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for get info</h2>
+<pre>
+Sample code snippet would look like this.
+
+StringList objectSelectList = new StringList();
+objectSelectList.add(SELECT_ATTRIBUTE"src/main/resources/org/sonar/l10n/java/rules/squid/AvoidUseDomainObject_java.html"_FIRSTNAME);
+objectSelectList.add(SELECT_ATTRIBUTE_LASTNAME);
+DomainObject dObj = new DomainObject(objectId);
+Map resultMap = dObj.getInfo(context, objectSelectList);
+String  sFirstName = resultMap.get(SELECT_ATTRIBUTE_FIRSTNAME);
+String  sLastName = resultMap.get(SELECT_ATTRIBUTE_LASTNAME);
+ 
+</pre>

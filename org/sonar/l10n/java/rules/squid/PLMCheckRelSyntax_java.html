@@ -1,0 +1,9 @@
+<p>PLM rule to certain type of relationship syntax </p>
+<h2>Non-compliant Code Example</h2>
+<pre>
+Use from[relationshipName].to or to[relationshipName].from instead of relationship[relationshipName].to or relationship[relationshipName].from. 
+</pre>
+<h2>Compliant Solution</h2>
+<pre>
+ from[relationshipName].to /to[relationshipName].from
+</pre>

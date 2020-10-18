@@ -1,0 +1,26 @@
+<p>PLM rule to avoid method multiple setAttributeValue on same Relationship</p>
+<h2>Noncompliant Code for setAttributeValue Example</h2>
+<pre>
+
+DomainRelationship.setAttributeValue(cont, Id1,"Test1", "value1");
+DomainRelationship.setAttributeValue(cont, Id1,"Test1", "value1");
+		
+above setAttributeValue can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for setAttributeValue</h2>
+<pre>
+Sample code snippet would look like this.
+
+HashMap attrMap = new HashMap();
+
+attrMap.put(SELECT_ATTRIBUTE_FIRST, FIRST_ATTRIBUTE_VALUE);
+attrMap.put(SELECT_ATTRIBUTE_SECOND, SECOND_ATTRIBUTE_VALUE);
+
+DomainRelationship domainRelationship = new DomainRelationship(strRelId);
+ContextUtil.startTransaction(context, true);
+try 
+{
+  		domainRelationship.open(context);
+		domainRelationship.setAttributeValues(context, attrMap);
+} 
+</pre>

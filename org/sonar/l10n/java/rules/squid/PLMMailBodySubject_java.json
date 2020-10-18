@@ -1,0 +1,13 @@
+{
+  "title": "Enovia Rule: Avoid Use of harcoding value for mail body and subject",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Minor"
+}

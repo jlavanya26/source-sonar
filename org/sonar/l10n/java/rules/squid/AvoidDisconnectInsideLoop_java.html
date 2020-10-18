@@ -1,0 +1,19 @@
+<p>PLM rule to avoid using disconnect in a loop</p>
+<h2>Noncompliant Code for disconnect Example</h2>
+<pre>
+
+for(int i=0; i < personListsize; i++){
+	Map person = (Map)personList.get(i);
+	String relId = (String)person.get(DomainConstants.SELECT_RELATIONSHIP_ID);
+	DomainRelationship.disconnect(context, relId);
+}
+
+Above disconnect can be used outside loop as shown below.
+</pre>
+<h2>Compliant Solution for disconnect</h2>
+
+<pre>
+Sample code snippet would look like this.
+
+
+</pre>

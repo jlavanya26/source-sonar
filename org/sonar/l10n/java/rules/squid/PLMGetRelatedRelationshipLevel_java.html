@@ -1,0 +1,18 @@
+<p>@PLM Rule : Level Argument must be greater than 0 in getRelatedObjects API.</p>
+<h2>Noncompliant Code for getRelated method  Example</h2>
+<pre>
+
+Avoid passing Level value as 0 as argument for getReleatedObjects method.
+
+DomainObject dom = new DomainObject();
+dom.getRelatedObjects(context, String, String, String, String, boolean, boolean, (Short)0, String, String, 0); <!-- Complience Code -->
+
+</pre>
+<h2>Compliant Solution for get info</h2>
+<pre>
+Sample code snippet would look like this.
+
+Applicable to getRelatedObject API.
+<!-- Non Compliance code  -->
+dom.getRelatedObjects(context, String, String, String, String, boolean, boolean, (Short)2, String, String, 0);
+</pre>

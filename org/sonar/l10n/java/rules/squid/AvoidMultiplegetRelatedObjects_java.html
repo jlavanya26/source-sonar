@@ -1,0 +1,18 @@
+<p>PLM rule to avoid getRelatedObjects method multiple </p>
+<h2>Non compliant Code for getRelatedObjects Example</h2>
+<pre>
+
+DomainObject dObj = new DomainObject(objectId);
+MapList routeNodeID = route.getRelatedObjects(context, "Route Node", "Person", selRouteNodeIDobjList, selRouteNodeIDrelList, false, true,(short)1, "", "",0);
+MapList routeNodeID = route.getRelatedObjects(context, "Route Node", "Person", selRouteNodeIDobjList, selRouteNodeIDrelList, false, true,(short)1, "", "",0);
+
+
+above getInfo can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for getRelatedObjects</h2>
+<pre>
+
+Sample code snippet would look like this.
+MapList routeNodeID = route.getRelatedObjects(context, "Route Node", "Person", selRouteNodeIDobjList, selRouteNodeIDrelList, false, true,(short)1, "", "",0);
+ 
+</pre>

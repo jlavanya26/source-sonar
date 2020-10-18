@@ -1,0 +1,16 @@
+<p>PLM rule to avoid method multiple getInfoList</p>
+<h2>Non compliant Code for getInfoList Example</h2>
+<pre>
+
+MapList templateMapList = DomainObject.findObjects(context, "Route Template", sTemplateName, "*", "*", "*", "",false,objSelects);
+MapList simList = DomainObject.findObjects(context, "Simulation", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+above getInfoList can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for getInfoList</h2>
+<pre>
+Sample code snippet would look like this.
+MapList simList = DomainObject.findObjects(context, "Simulation,Route Template", "*", "(!to[AR_Analysis Request])", new StringList("id"));
+
+ 
+</pre>

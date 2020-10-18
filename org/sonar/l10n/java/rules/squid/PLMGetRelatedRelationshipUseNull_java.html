@@ -1,0 +1,21 @@
+<p>@PLM Rule : Use Null instead of new stringList as argument in getRelated API.</p>
+<h2>Noncompliant Code for getRelated  Example</h2>
+<pre>
+
+Pass Null value as argument instead of new StringList() for getRelatedObjects/getRelatedObject/expandSelect method.
+
+
+DomainObject dom = new DomainObject();
+dom.getRelatedObjects(context, String, String, new StringList(), new StringList(), boolean, boolean, Level, String, String, 0); <!-- Complience Code -->
+dom.getRelatedObject(context, new StringList(), boolean, String, new StringList());
+dom.expandSelect(context, String, new StringList(), new StringList(), new StringList(), boolean, boolean, Level, String, String, 0); <!-- Complience Code -->
+</pre>
+<h2>Compliant Solution for get info</h2>
+<pre>
+Sample code snippet would look like this.
+Applicable to getRelatedObject API.
+<!-- Non Compliance code  -->
+dom.getRelatedObjects(context, String, String, null, null, boolean, boolean, Level, String, String, 0);
+dom.getRelatedObject(context, null, boolean, String, null);
+dom.expandSelect(context, String, null, null, new StringList(), boolean, boolean, Level, String, String, 0); 
+</pre>

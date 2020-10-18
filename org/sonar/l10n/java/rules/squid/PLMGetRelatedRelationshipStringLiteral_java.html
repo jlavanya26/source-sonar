@@ -1,0 +1,23 @@
+<p>@PLM Rule :  Avoid Hardcoded String literal values as argument in APIs.</p>
+<h2>Noncompliant Code for getRelated  Example</h2>
+<pre>
+
+Avoid hardcoded String literal values as arguments for getRelatedObject method.
+
+Avoid using HardCoded value for Type, Name, Revision , Vault for findObjects API
+Avoid using HardCoded value for Type, Relationship , BusSelectables, RelSelectables.
+
+DomainObject dom = new DomainObject();
+dom.getRelatedObjects(context, "SOME_VALUE1", "SOME_VALUE2", "SOME_VALUE3", "SOME_VALUE4", boolean, boolean, Level, String, String, 0); <!-- Complience Code -->
+dom.getRelatedObject(context,"SOME_VALUE1",boolean, "SOME_VALUE2","SOME_VALUE3");
+DomainObject.findObjects(context, "SOME_TYPE","SOME_NAME", "SOME_REVISION", String, "SOME_VAULT", strWhereExp, boolen, boolean, Level); <!-- Complience Code -->
+</pre>
+<h2>Compliant Solution for get info</h2>
+<pre>
+Sample code snippet would look like this.
+Applicable to getRelatedObject API.
+<!-- Non Compliance code  -->
+dom.getRelatedObjects(context, CONSTANT.SOME_VALUE1, CONSTANT.SOME_VALUE2, CONSTANT.SOME_VALUE3, CONSTANT.SOME_VALUE4, boolean, boolean, Level, String, String, 0);
+dom.getRelatedObject(context,CONSTANT.SOME_VALUE1,boolean, CONSTANT.SOME_VALUE2, CONSTANT.SOME_VALUE3");
+DomainObject.findObjects(context, CONSTANT.SOME_TYPE,CONSTANT.SOME_NAME, CONSTANT.SOME_REVISION, String, CONSTANT.SOME_VAULT, strWhereExp, boolen, boolean, Level); 
+</pre>

@@ -1,0 +1,26 @@
+<p>PLM rule to avoid ADK method getRelatedObject in Loop</p>
+<h2>Noncompliant Code for getRelatedObject Example</h2>
+<pre>
+
+for (int j = 0; j < theSims.size(); j++) {
+	
+	Map theNextMap = (Map)theSims.get(j);
+	getRelatedObject();
+}
+above getRelatedObject can be placed outside the loop.
+
+</pre>
+<h2>Compliant Solution for getRelatedObject</h2>
+<pre>
+Sample code snippet would look like this.
+
+StringList theNextARAllocationTEIds ;
+ getRelatedObject();
+ 
+ for (int j = 0; j < theSims.size(); j++) {
+
+	Map theNextMap = (Map)theSims.get(j);
+	//Get the Allocations for the next Route
+}
+
+</pre>

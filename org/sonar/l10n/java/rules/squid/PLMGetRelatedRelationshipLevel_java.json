@@ -1,0 +1,13 @@
+{
+  "title": "Enovia Rule: Level Argument must be greater than 0 in getRelatedObjects API.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Minor"
+}

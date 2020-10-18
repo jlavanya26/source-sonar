@@ -1,0 +1,20 @@
+<p>PLM rule to avoid method multiple setAttributeValue on same Object</p>
+<h2>Noncompliant Code for setAttributeValue Example</h2>
+<pre>
+
+DomainObject dObj = new DomainObject(objectId);
+dObj.setAttributeValue(context, SELECT_ATTRIBUTE_FIRST, FIRST_ATTRIBUTE_VALUE);
+dObj.setAttributeValue(context, SELECT_ATTRIBUTE_SECOND, SECOND_ATTRIBUTE_VALUE) 
+
+above setAttributeValue can be clubbed into a single DB call as shown below.
+</pre>
+<h2>Compliant Solution for setAttributeValue</h2>
+<pre>
+Sample code snippet would look like this.
+HashMap attrMap = new HashMap();
+
+attrMap.put(SELECT_ATTRIBUTE_FIRST, FIRST_ATTRIBUTE_VALUE);
+attrMap.put(SELECT_ATTRIBUTE_SECOND, SECOND_ATTRIBUTE_VALUE);
+DomainObject dObj = new DomainObject(objectId);
+domObj.setAttributeValues(context, attrMap); 
+</pre>
